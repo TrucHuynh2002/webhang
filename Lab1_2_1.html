@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB1 - 2 - 1</title>
+    <style>
+        #target{
+            border: 1px solid #000;
+            min-height: 300px;
+        }
+        .title{
+            color: red;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="ten" value="Hello everyone">
+    <h2>JAVASCRIPT</h2>
+    <!-- <br> -->
+    <div id="target"></div>
+
+    <script>
+        var h2 = document.querySelector("h2");
+        var ten = document.querySelector("#ten");
+        ten.onkeyup = function() {
+            h2.innerText = ten.value;
+            }
+
+        var target = document.querySelector("#target");
+        var h2 = document.createElement("h2");
+        h2.innerText = "Hello Polytechnic";
+        h2.setAttribute("class", "title");
+        target.appendChild(h2);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>LAB 1 - 5</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <div class="form-group">
+          <label>Data</label>
+          <input type="text" class="form-control" id="addData" placeholder="" name="date" value="">
+        </div>
+        <div class="form-group">
+            <label>Month</label>
+            <input type="text" class="form-control" id="addMonth" placeholder="" name="month" value="">
+          </div>
+          <div class="form-group">
+            <label>Year</label>
+            <input type="text" class="form-control" id="addYear" placeholder="" name="year" value="">
+          </div>
+          <button type="button" class="btn btn-primary" id="add">Convert</button>
+
+          <h3 id="thoi_gian1"></h3>
+          <h3 id="thoi_gian2"></h3>
+          <h3 id="thoi_gian3"></h3>
+          <h3 id="thoi_gian4"></h3>
+          <h3 id="thoi_gian5"></h3>
+    </div>
+
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+
+    <script>       
+        var add = document.querySelector("#add");      
+        add.onclick = function(){
+        var date = document.querySelector("#addData").value;
+        var month = document.querySelector("#addMonth").value;
+        var year = document.querySelector("#addYear").value;
+        var tg1 = document.querySelector("#thoi_gian1");
+        var tg2 = document.querySelector("#thoi_gian2");
+        var tg3 = document.querySelector("#thoi_gian3");
+        var tg4 = document.querySelector("#thoi_gian4");
+        var tg5 = document.querySelector("#thoi_gian5");
+        var time = [date,month,year];
+        var thoi_gian1 = moment(time,"DD-MM-YYYY").format("YYYY-MM-DD");
+        var thoi_gian2 = moment(time,"DD-MM-YYYY").format("DD/MM/YYYY");
+        var thoi_gian3 = moment(time,"DD-MM-YYYY").format("DD.MM.YYYY");
+        var thoi_gian4 = moment(time,"DD-MM-YYYY").format("DD, MMM YYYY");
+        var thoi_gian5 = moment(time,"DD-MM-YYYY").format("DD, MMMM YYYY");
+        tg1.innerText=thoi_gian1;
+        tg2.innerText=thoi_gian2;
+        tg3.innerText=thoi_gian3;
+        tg4.innerText=thoi_gian4;
+        tg5.innerText=thoi_gian5;
+    }
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
